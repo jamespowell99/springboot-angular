@@ -5,10 +5,11 @@
         });
 
         $scope.addItem = function(itemToAdd) {
-            console.log("creating: " +description)
+            console.log("creating: " +itemToAdd)
             new Item({
-                description: description,
-                checked: false
+                description: itemToAdd.description,
+                checked: false,
+                colour: itemToAdd.colour
             }).$save(function(item) {
                     $scope.items.push(item);
                 });
